@@ -30,11 +30,12 @@ jobs:
         if: "runner.os == 'macos'"
         run: |
           brew install cppcheck
-      - name: install gcc and cppcheck (windows)
+      # Note: mingw already installed on windows-2022 runner
+      - name: install cppcheck (windows)
         if: "runner.os == 'windows'"
         uses: crazy-max/ghaction-chocolatey@v3
         with:
-          args: install mingw cppcheck -y
+          args: install cppcheck -y
         
       - name: make tests
         run: |
