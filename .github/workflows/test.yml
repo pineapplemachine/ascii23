@@ -72,26 +72,21 @@ jobs:
           
       - name: run test_impl (windows)
         if: "runner.os == 'windows'"
-        shell: cmd
         run: |
-          "D:/a/ascii23/ascii23/bin/test_impl.exe"
+          D:/a/ascii23/ascii23/bin/test_impl.exe
       - name: run test_header (windows)
         if: "runner.os == 'windows'"
-        shell: cmd
         run: |
-          "D:/a/ascii23/ascii23/bin/test_header.exe"
+          D:/a/ascii23/ascii23/bin/test_header.exe
       - name: run test_lib (windows)
         if: "runner.os == 'windows'"
-        shell: cmd
         run: |
-          "D:/a/ascii23/ascii23/bin/test_lib.exe"
+          D:/a/ascii23/ascii23/bin/test_lib.exe
       - name: run test_dll (windows)
         if: "runner.os == 'windows'"
-        shell: cmd
         run: |
-          "D:/a/ascii23/ascii23/bin/test_dll.exe"
+          D:/a/ascii23/ascii23/bin/test_dll.exe
       - name: run bench_impl (windows)
         if: "runner.os == 'windows'"
-        shell: cmd
         run: |
-          "D:/a/ascii23/ascii23/bin/bench_impl.exe"
+          D:/a/ascii23/ascii23/bin/bench_impl.exe
