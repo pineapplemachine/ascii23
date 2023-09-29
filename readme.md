@@ -37,7 +37,7 @@ int ascii::to_upper_char(const int ch)
 
 **As a header-only library:**
 
-To use ascii23 as a header-only library:
+To use ascii23 as a header-only library (recommended):
 
 1. Copy `src/ascii23.h` from this repository into your project's include directory. 
 2. Write `#include <ascii23.h>` in your source files to include it.

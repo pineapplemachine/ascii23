@@ -31,7 +31,7 @@ def format_doc(doc):
     return "\n".join(doc_lines)
 
 def format_id(name):
-    return name.lower().replace("::", "-")
+    return name.lower().replace("::", "")
 
 print("Reading source code from src/ascii23.h")
 with open("src/ascii23.h", "rt", encoding="utf-8") as ascii_file:
