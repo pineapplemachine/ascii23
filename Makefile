@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Iascii23 -Iinclude -std=c++11 -Wall -Wextra
+CXXFLAGS = -Isrc -Iinclude -std=c++11 -Wall -Wextra
 CXXFLAGS_RELEASE = -DNDEBUG -O3
 CXXFLAGS_DEBUG = -DDEBUG -g -O0
 CXXFLAGS_BUILD_LIB = -DASCII23_BUILD_COMPILED_LIB
@@ -44,7 +44,7 @@ test_impl:
 	mkdir -p bin
 	# negativeIndex false positive with cppcheck 2.10
 	cppcheck --language=c++ --suppress=negativeIndex test/test_impl.cpp
-	cppcheck --language=c++ ascii23/ascii23.h
+	cppcheck --language=c++ src/ascii23.h
 	$(CXX) $(CXXFLAGS) $(CXXFLAGS_DEBUG) \
 		-o bin/test test/test_impl.cpp
 	echo "Compiled test binary at bin/test"
