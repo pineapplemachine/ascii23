@@ -17,27 +17,20 @@ jobs:
       - name: git checkout
         uses: actions/checkout@v3
         
-      - name: install gcc (unix/macos)
+      - name: install gcc (ubuntu)
         if: "runner.os != 'windows'"
         uses: Dup4/actions-setup-gcc@v1
         with:
           version: latest
-      - name: install cppcheck (unix)
+      - name: install cppcheck (ubuntu)
         if: "runner.os == 'linux'"
         run: |
           sudo apt-get install cppcheck -y
-      - name: install cppcheck (macos)
-        if: "runner.os == 'macos'"
+      
+      - name: run cppcheck (ubuntu)
         run: |
-          brew install cppcheck
-      # Note: mingw already installed on windows-2022 runner
-      - name: install cppcheck (windows)
-        if: "runner.os == 'windows'"
-        uses: crazy-max/ghaction-chocolatey@v3
-        continue-on-error: true
-        with:
-          args: install cppcheck -y --ignore-package-exit-codes
-        
+          make cppcheck
+      
       - name: make tests
         run: |
           make test_impl
@@ -52,20 +45,25 @@ jobs:
         run: |
           make bench_impl
           
-      - name: run implementation test
-        run:
+      - name: run tests (ubuntu)
+        if: "runner.os != 'windows'"
+        run: |
           ./bin/test_impl
-      - name: run header-only test
-        run:
           ./bin/test_header
-      - name: run static linking test
-        run:
           ./bin/test_lib
-      - name: run dll test (windows)
+      - name: run tests (windows)
         if: "runner.os == 'windows'"
-        run:
-          ./bin/test_dll
+        run: |
+          "bin/test_impl.exe"
+          "bin/test_header.exe"
+          "bin/test_lib.exe"
+          "bin/test_dll.exe"
           
-      - name: run benchmark
+      - name: run benchmark (ubuntu)
+        if: "runner.os != 'windows'"
         run: |
           ./bin/bench_impl
+      - name: run benchmark (windows)
+        if: "runner.os == 'windows'"
+        run: |
+          "bin/bench_impl.exe"

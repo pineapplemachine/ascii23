@@ -10,6 +10,12 @@ clean:
 	rm -rf lib/
 	rm -rf bin/
 
+cppcheck:
+	# negativeIndex false positive with cppcheck 2.10
+	cppcheck --language=c++ --suppress=negativeIndex test/test_impl.cpp
+	cppcheck --language=c++ test/bench.cpp
+	cppcheck --language=c++ src/ascii23.h
+
 release_lib:
 	mkdir -p bin
 	mkdir -p lib
@@ -35,16 +41,12 @@ release_dll:
 
 bench_impl:
 	mkdir -p bin
-	cppcheck --language=c++ test/bench.cpp
 	$(CXX) $(CXXFLAGS) $(CXXFLAGS_RELEASE) \
 		-o bin/bench_impl test/bench.cpp
 	echo "Compiled test binary at bin/bench"
 
 test_impl:
 	mkdir -p bin
-	# negativeIndex false positive with cppcheck 2.10
-	cppcheck --language=c++ --suppress=negativeIndex test/test_impl.cpp
-	cppcheck --language=c++ src/ascii23.h
 	$(CXX) $(CXXFLAGS) $(CXXFLAGS_DEBUG) \
 		-o bin/test_impl test/test_impl.cpp
 	echo "Compiled test binary at bin/test_impl"
