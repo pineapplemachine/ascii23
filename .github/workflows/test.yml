@@ -61,19 +61,19 @@ jobs:
       - name: run test_impl (windows)
         if: "runner.os == 'windows'"
         run: |
-          ./bin/test_impl.exe
+          bin/test_impl.exe
       - name: run test_header (windows)
         if: "runner.os == 'windows'"
         run: |
-          ./bin/test_header.exe
+          bin/test_header.exe
       - name: run test_lib (windows)
         if: "runner.os == 'windows'"
         run: |
-          ./bin/test_lib.exe
+          bin/test_lib.exe
       - name: run test_dll (windows)
         if: "runner.os == 'windows'"
         run: |
-          ./bin/test_dll.exe
+          bin/test_dll.exe
           
       - name: run bench_impl (ubuntu)
         if: "runner.os != 'windows'"
@@ -82,4 +82,4 @@ jobs:
       - name: run bench_impl (windows)
         if: "runner.os == 'windows'"
         run: |
-          ./bin/bench_impl.exe
+          bin/bench_impl.exe
