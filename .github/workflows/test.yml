@@ -6,25 +6,50 @@ on:
   pull_request:
     types: [opened, reopened, synchronize]
 jobs:
-  tests:
-    runs-on: ubuntu-latest
+  test:
+    strategy:
+      matrix:
+        platform:
+          - ubuntu-22.04
+          - macos-12
+          - windows-2022
+    runs-on: ${{ matrix.platform }}
     steps:
       - name: git checkout
         uses: actions/checkout@v3
         
-      - name: install gcc
+      - name: install gcc (unix/macos)
+        if: "runner.os != 'windows'"
         uses: Dup4/actions-setup-gcc@v1
         with:
           version: latest
-          
-      - name: install cppcheck
-        run: sudo apt-get install cppcheck
+      - name: install cppcheck (unix)
+        if: "runner.os == 'ubuntu'"
+        run: |
+          sudo apt-get install cppcheck -y
+      - name: install cppcheck (macos)
+        if: "runner.os == 'macos'"
+        run: |
+          brew install cppcheck
+      - name: install choco and cppcheck (windows)
+        if: "runner.os == 'windows'"
+        uses: crazy-max/ghaction-chocolatey@v3
+        with:
+          args: install mingw cppcheck -y
+      - name: install gcc (windows)
+        if: "runner.os == 'windows'"
+        run: |
+          choco install mingw -y
         
       - name: make tests
         run: |
           make test_impl
           make test_header
           make test_lib
+      - name: make dll test (windows)
+        if: "runner.os == 'windows'"
+        run: |
+          make test_dll
           
       - name: make benchmark
         run: |
@@ -39,6 +64,10 @@ jobs:
       - name: run static linking test
         run:
           ./bin/test_lib
+      - name: run dll test (windows)
+        if: "runner.os == 'windows'"
+        run:
+          ./bin/test_dll
           
       - name: run benchmark
         run: |
