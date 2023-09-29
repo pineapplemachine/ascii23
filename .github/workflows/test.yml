@@ -31,15 +31,11 @@ jobs:
         if: "runner.os == 'macos'"
         run: |
           brew install cppcheck
-      - name: install choco and cppcheck (windows)
+      - name: install gcc and cppcheck (windows)
         if: "runner.os == 'windows'"
         uses: crazy-max/ghaction-chocolatey@v3
         with:
           args: install mingw cppcheck -y
-      - name: install gcc (windows)
-        if: "runner.os == 'windows'"
-        run: |
-          choco install mingw -y
         
       - name: make tests
         run: |

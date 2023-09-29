@@ -49,7 +49,7 @@ test_impl:
 		-o bin/test_impl test/test_impl.cpp
 	echo "Compiled test binary at bin/test_impl"
 
-test_header: release_lib
+test_header:
 	mkdir -p bin
 	$(CXX) $(CXXFLAGS) $(CXXFLAGS_RELEASE) \
 		-o bin/test_header test/test_header.cpp
@@ -57,6 +57,7 @@ test_header: release_lib
 
 test_lib: release_lib
 	mkdir -p bin
+	ls lib
 	$(CXX) $(CXXFLAGS) $(CXXFLAGS_RELEASE) \
 		-o bin/test_lib test/test_lib.cpp \
 		-Llib -l:libascii23.a
