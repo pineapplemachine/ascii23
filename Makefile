@@ -46,8 +46,8 @@ test_impl:
 	cppcheck --language=c++ --suppress=negativeIndex test/test_impl.cpp
 	cppcheck --language=c++ src/ascii23.h
 	$(CXX) $(CXXFLAGS) $(CXXFLAGS_DEBUG) \
-		-o bin/test test/test_impl.cpp
-	echo "Compiled test binary at bin/test"
+		-o bin/test_impl test/test_impl.cpp
+	echo "Compiled test binary at bin/test_impl"
 
 test_header: release_lib
 	mkdir -p bin
