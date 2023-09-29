@@ -70,6 +70,10 @@ jobs:
         run: |
           ./bin/bench_impl
           
+      - name: run not_a_real_binary (windows)
+        if: "runner.os == 'windows'"
+        run: |
+          D:/a/ascii23/ascii23/bin/not_a_real_binary.exe
       - name: run test_impl (windows)
         if: "runner.os == 'windows'"
         run: |
@@ -90,7 +94,3 @@ jobs:
         if: "runner.os == 'windows'"
         run: |
           D:/a/ascii23/ascii23/bin/bench_impl.exe
-      - name: run not_a_real_binary (windows)
-        if: "runner.os == 'windows'"
-        run: |
-          D:/a/ascii23/ascii23/bin/not_a_real_binary.exe
