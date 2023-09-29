@@ -6,8 +6,9 @@ Ascii23 is a header-only C++ library offering ASCII-related functionality. It ma
 
 Here is a summary of the functions implemented by ascii23.
 For more complete documentation, please refer either to the commented
-source code in `src/ascii23.h` or to `documentation.md` in the
-root directory of this repository.
+source code in `src/ascii23.h` or to
+[`documentation.md`](https://github.com/pineapplemachine/ascii23/blob/master/documentation.md)
+in the root directory of this repository.
 
 ``` cpp
 bool ascii::is_char(const int ch);
@@ -69,5 +70,7 @@ To compile `ascii23.dll` and link with it dynamically:
 
 ## Documentation
 
-<!-- (?s)/\*\*[^;]+?ASCII23_API[^;]+?; -->
-    
+For more complete documentation, please refer either to the commented
+source code in `src/ascii23.h` or to
+[`documentation.md`](https://github.com/pineapplemachine/ascii23/blob/master/documentation.md)
+in the root directory of this repository.
