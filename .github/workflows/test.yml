@@ -34,11 +34,9 @@ jobs:
       - name: install cppcheck (windows)
         if: "runner.os == 'windows'"
         uses: crazy-max/ghaction-chocolatey@v3
-        # Necessary because choco exits with 3010 status
-        # indicating the user ought to reboot
         continue-on-error: true
         with:
-          args: install cppcheck -y
+          args: install cppcheck -y --ignore-package-exit-codes
         
       - name: make tests
         run: |
