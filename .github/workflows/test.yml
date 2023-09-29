@@ -30,10 +30,14 @@ jobs:
         run: |
           make bench_impl
           
-      - name: run tests
+      - name: run implementation test
         run:
           ./bin/test_impl
+      - name: run header-only test
+        run:
           ./bin/test_header
+      - name: run static linking test
+        run:
           ./bin/test_lib
           
       - name: run benchmark
