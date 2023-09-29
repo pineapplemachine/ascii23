@@ -1,0 +1,40 @@
+name: Run ascii23 tests and benchmark
+run-name: ${{ github.actor }} is running ascii23 tests and benchmark
+on:
+  push:
+    branches: [master]
+  pull_request:
+    types: [opened, reopened, synchronize]
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: git checkout
+        uses: actions/checkout@v3
+        
+      - name: install gcc
+        uses: Dup4/actions-setup-gcc@v1
+        with:
+          version: latest
+          
+      - name: install cppcheck
+        run: sudo apt-get install cppcheck
+        
+      - name: make tests
+        run: |
+          make test_impl
+          make test_header
+          make test_lib
+          
+      - name: make benchmark
+        run: |
+          make bench
+          
+      - name: run tests
+        run:
+          bin/test
+          bin/test_header
+          bin/test_lib
+          
+      - name: run benchmark
+        run: bin/bench
