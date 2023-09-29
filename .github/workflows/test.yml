@@ -22,12 +22,13 @@ jobs:
         uses: Dup4/actions-setup-gcc@v1
         with:
           version: latest
+          
       - name: install cppcheck (ubuntu)
         if: "runner.os == 'linux'"
         run: |
           sudo apt-get install cppcheck -y
-      
       - name: run cppcheck (ubuntu)
+        if: "runner.os == 'linux'"
         run: |
           make cppcheck
       
