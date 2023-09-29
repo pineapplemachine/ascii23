@@ -1,13 +1,15 @@
 # ascii23
 
-Ascii23 is a header-only C++ library offering ASCII-related functionality. It may be used as an alternative to the `<cctype>` header that has the same behavior regardless of locale, and behaves sensibly and predictably with UTF-8 and other Unicode text inputs. It is released under the permissive [zlib/libpng license](https://opensource.org/license/zlib/).
+![GitHub automated test workflow status](https://github.com/pineapplemachine/ascii23/actions/workflows/test.yml/badge.svg)
+
+Ascii23 is a header-only C++ library offering ASCII-related functionality. It may be used as an alternative to the `<cctype>` header. Ascii23 has the same behavior regardless of locale, and behaves sensibly and predictably with UTF-8 and other Unicode text inputs. It is released under the permissive [zlib/libpng license](https://opensource.org/license/zlib/).
 
 Here is a summary of the functions implemented by ascii23.
 For more complete documentation, please refer either to the commented
 source code in `src/ascii23.h` or to `documentation.md` in the
 root directory of this repository.
 
-```
+``` cpp
 bool ascii::is_char(const int ch)
 bool ascii::is_alpha_char(const int ch)
 bool ascii::is_alpha_lower_char(const int ch)
