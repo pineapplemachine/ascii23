@@ -46,25 +46,40 @@ jobs:
         run: |
           make bench_impl
           
-      - name: run tests (ubuntu)
+      - name: run test_impl (ubuntu)
         if: "runner.os != 'windows'"
         run: |
           ./bin/test_impl
+      - name: run test_header (ubuntu)
+        if: "runner.os != 'windows'"
+        run: |
           ./bin/test_header
+      - name: run test_lib (ubuntu)
+        if: "runner.os != 'windows'"
+        run: |
           ./bin/test_lib
-      - name: run tests (windows)
+      - name: run test_impl (windows)
         if: "runner.os == 'windows'"
         run: |
-          "bin/test_impl.exe"
-          "bin/test_header.exe"
-          "bin/test_lib.exe"
-          "bin/test_dll.exe"
+          cd bin && test_impl.exe
+      - name: run test_header (windows)
+        if: "runner.os == 'windows'"
+        run: |
+          cd bin && test_header.exe
+      - name: run test_lib (windows)
+        if: "runner.os == 'windows'"
+        run: |
+          cd bin && test_lib.exe
+      - name: run test_dll (windows)
+        if: "runner.os == 'windows'"
+        run: |
+          cd bin && test_dll.exe
           
-      - name: run benchmark (ubuntu)
+      - name: run bench_impl (ubuntu)
         if: "runner.os != 'windows'"
         run: |
           ./bin/bench_impl
-      - name: run benchmark (windows)
+      - name: run bench_impl (windows)
         if: "runner.os == 'windows'"
         run: |
-          "bin/bench_impl.exe"
+          cd bin && bench_impl.exe
