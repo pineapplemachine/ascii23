@@ -45,6 +45,13 @@ jobs:
       - name: make benchmark
         run: |
           make bench_impl
+      
+      - name: ls lib
+        run: |
+          ls lib
+      - name: ls bin
+        run: |
+          ls bin
           
       - name: run test_impl (ubuntu)
         if: "runner.os != 'windows'"
