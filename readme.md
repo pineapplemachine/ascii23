@@ -10,29 +10,29 @@ source code in `src/ascii23.h` or to `documentation.md` in the
 root directory of this repository.
 
 ``` cpp
-bool ascii::is_char(const int ch)
-bool ascii::is_alpha_char(const int ch)
-bool ascii::is_alpha_lower_char(const int ch)
-bool ascii::is_alpha_upper_char(const int ch)
-bool ascii::is_digit_char(const int ch)
-bool ascii::is_hex_digit_char(const int ch)
-bool ascii::is_hex_digit_lower_char(const int ch)
-bool ascii::is_hex_digit_upper_char(const int ch)
-bool ascii::is_word_char(const int ch)
-bool ascii::is_word_lower_char(const int ch)
-bool ascii::is_word_upper_char(const int ch)
-bool ascii::is_word_start_char(const int ch)
-bool ascii::is_word_lower_start_char(const int ch)
-bool ascii::is_word_upper_start_char(const int ch)
-bool ascii::is_punctuation_char(const int ch)
-bool ascii::is_whitespace_char(const int ch)
-bool ascii::is_blank_char(const int ch)
-bool ascii::is_null_char(const int ch)
-bool ascii::is_control_char(const int ch)
-bool ascii::is_printable_char(const int ch)
-bool ascii::is_graphical_char(const int ch)
-int ascii::to_lower_char(const int ch)
-int ascii::to_upper_char(const int ch)
+bool ascii::is_char(const int ch);
+bool ascii::is_alpha_char(const int ch);
+bool ascii::is_alpha_lower_char(const int ch);
+bool ascii::is_alpha_upper_char(const int ch);
+bool ascii::is_digit_char(const int ch);
+bool ascii::is_hex_digit_char(const int ch);
+bool ascii::is_hex_digit_lower_char(const int ch);
+bool ascii::is_hex_digit_upper_char(const int ch);
+bool ascii::is_word_char(const int ch);
+bool ascii::is_word_lower_char(const int ch);
+bool ascii::is_word_upper_char(const int ch);
+bool ascii::is_word_start_char(const int ch);
+bool ascii::is_word_lower_start_char(const int ch);
+bool ascii::is_word_upper_start_char(const int ch);
+bool ascii::is_punctuation_char(const int ch);
+bool ascii::is_whitespace_char(const int ch);
+bool ascii::is_blank_char(const int ch);
+bool ascii::is_null_char(const int ch);
+bool ascii::is_control_char(const int ch);
+bool ascii::is_printable_char(const int ch);
+bool ascii::is_graphical_char(const int ch);
+int ascii::to_lower_char(const int ch);
+int ascii::to_upper_char(const int ch);
 ```
 
 ## Using ascii23
