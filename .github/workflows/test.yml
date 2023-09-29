@@ -24,7 +24,7 @@ jobs:
         with:
           version: latest
       - name: install cppcheck (unix)
-        if: "runner.os == 'ubuntu'"
+        if: "runner.os == 'linux'"
         run: |
           sudo apt-get install cppcheck -y
       - name: install cppcheck (macos)
