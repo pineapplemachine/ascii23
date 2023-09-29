@@ -37,7 +37,7 @@ bench_impl:
 	mkdir -p bin
 	cppcheck --language=c++ test/bench.cpp
 	$(CXX) $(CXXFLAGS) $(CXXFLAGS_RELEASE) \
-		-o bin/bench test/bench.cpp
+		-o bin/bench_impl test/bench.cpp
 	echo "Compiled test binary at bin/bench"
 
 test_impl:

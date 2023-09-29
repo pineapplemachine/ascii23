@@ -28,13 +28,13 @@ jobs:
           
       - name: make benchmark
         run: |
-          make bench
+          make bench_impl
           
       - name: run tests
         run:
-          bin/test
+          bin/test_impl
           bin/test_header
           bin/test_lib
           
       - name: run benchmark
-        run: bin/bench
+        run: bin/bench_impl
