@@ -32,9 +32,10 @@ jobs:
           
       - name: run tests
         run:
-          bin/test_impl
-          bin/test_header
-          bin/test_lib
+          ./bin/test_impl
+          ./bin/test_header
+          ./bin/test_lib
           
       - name: run benchmark
-        run: bin/bench_impl
+        run: |
+          ./bin/bench_impl
