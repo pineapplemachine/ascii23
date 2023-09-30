@@ -4,11 +4,11 @@
 
 Ascii23 is a header-only C++ library offering ASCII-related functionality. It may be used as an alternative to the `<cctype>` header. Ascii23 has the same behavior regardless of locale, and behaves sensibly and predictably with UTF-8 and other Unicode text inputs. It is released under the permissive [zlib/libpng license](https://opensource.org/license/zlib/).
 
-Here is a summary of the functions implemented by ascii23.
-For more complete documentation, please refer either to the commented
-source code in `src/ascii23.h` or to
-[`documentation.md`](https://github.com/pineapplemachine/ascii23/blob/master/documentation.md)
-in the root directory of this repository.
+## Documentation
+
+For complete API documentation, please refer either to the commented source code in `src/ascii23.h` or to the [documentation.md](https://github.com/pineapplemachine/ascii23/blob/master/documentation.md) Markdown file in the root directory of this repository.
+
+Here is a summary of the functions implemented by ascii23, which are defined in the `ascii` namespace:
 
 ``` cpp
 bool ascii::is_char(const int ch);
@@ -67,10 +67,3 @@ To compile `ascii23.dll` and link with it dynamically:
 5. Configure your project to link with `ascii23.dll`, e.g. by adding `-lascii23` to your linker flags.
 6. Define `ASCII23_USE_SHARED_LIB` in your project before including `ascii23.h`, e.g. by adding `-DASCII23_USE_SHARED_LIB` to your compiler flags.
 7. Write `#include <ascii23.h>` in your source files to include declarations only.
-
-## Documentation
-
-For more complete documentation, please refer either to the commented
-source code in `src/ascii23.h` or to
-[`documentation.md`](https://github.com/pineapplemachine/ascii23/blob/master/documentation.md)
-in the root directory of this repository.
