@@ -35,9 +35,9 @@ release_dll:
 
 bench_impl:
 	mkdir -p bin
-	cppcheck --language=c++ test/bench.cpp
+	cppcheck --language=c++ test/bench_impl.cpp
 	$(CXX) $(CXXFLAGS) $(CXXFLAGS_RELEASE) \
-		-o bin/bench_impl test/bench.cpp
+		-o bin/bench_impl test/bench_impl.cpp
 	echo "Compiled test binary at bin/bench"
 
 test_impl:
