@@ -16,6 +16,9 @@ cppcheck:
 	cppcheck --language=c++ test/bench_impl.cpp
 	cppcheck --language=c++ src/ascii23.h
 
+docs:
+	python docgen.py
+
 release_lib:
 	mkdir -p bin
 	mkdir -p lib
