@@ -2,7 +2,7 @@
 
 ![GitHub automated test workflow status](https://github.com/pineapplemachine/ascii23/actions/workflows/test.yml/badge.svg)
 
-Ascii23 is a header-only C++ library offering ASCII-related functionality. It may be used as an alternative to the `<cctype>` header. Unlike `<cctype>`, Ascii23 has the same behavior regardless of locale, and it behaves sensibly and predictably with UTF-8 and other Unicode text inputs. (Neither non-ASCII Unicode code points nor UTF-8 code units belonging to non-ASCII code points should ever produce false positives.)
+Ascii23 is a header-only C++ library offering ASCII-related functionality. It may be used as an alternative to the `<cctype>` header. Unlike cctype, ascii23 has the same behavior regardless of locale, and it behaves sensibly and predictably with UTF-8 and other Unicode text inputs. (Neither non-ASCII Unicode code points nor UTF-8 code units belonging to non-ASCII code points should ever produce false positives.)
     
 Ascii23 is released under the permissive [zlib/libpng license](https://opensource.org/license/zlib/).
 
