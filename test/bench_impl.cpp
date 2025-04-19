@@ -5,7 +5,7 @@
 
 #define CHAR_BENCHMARK(char_fn) \
     ch = 0; \
-    ankerl::nanobench::Bench().run(#char_fn, [&] { \
+    ankerl::nanobench::Bench().minEpochIterations(4000000).run(#char_fn, [&] { \
         const auto i = char_fn((ch++) & 0xff); \
         ankerl::nanobench::doNotOptimizeAway(i); \
     });
