@@ -450,8 +450,8 @@ ASCII23_INLINE bool is_hex_digit_char(const int ch) {
     // Equivalent behavior, slower benchmark
     // return (
     //     (ch >= '0' && ch <= '9') ||
-    //     (ch >= 'a' && ch <= 'f') ||
-    //     (ch >= 'A' && ch <= 'F')
+    //     (ch >= 'A' && ch <= 'F') ||
+    //     (ch >= 'a' && ch <= 'f')
     // );
 }
 
@@ -486,8 +486,8 @@ ASCII23_INLINE bool is_word_char(const int ch) {
     // Equivalent behavior, slower benchmark
     // return ch == '_' || (
     //     (ch >= '0' && ch <= '9') ||
-    //     (ch >= 'a' && ch <= 'z') ||
-    //     (ch >= 'A' && ch <= 'Z')
+    //     (ch >= 'A' && ch <= 'Z') ||
+    //     (ch >= 'a' && ch <= 'z')
     // );
 }
 
@@ -521,8 +521,8 @@ ASCII23_INLINE bool is_word_start_char(const int ch) {
     );
     // Equivalent behavior, slower benchmark
     // return ch == '_' || (
-    //     (ch >= 'a' && ch <= 'z') ||
-    //     (ch >= 'A' && ch <= 'Z')
+    //     (ch >= 'A' && ch <= 'Z') ||
+    //     (ch >= 'a' && ch <= 'z')
     // );
 }
 
